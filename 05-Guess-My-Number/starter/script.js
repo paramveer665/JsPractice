@@ -31,5 +31,6 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   } else {
     document.querySelector(".message").textContent = " 🥳 Guessed Correctly";
+    document.querySelector(".number").textContent = num;
   }
 });
