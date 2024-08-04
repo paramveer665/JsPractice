@@ -28,10 +28,31 @@ let mydate = new Date();
 
 // console.log(mum);
 
-let lname = "rahul";
-let age = 20;
-let designation = "clerk";
-console.log(Array.of(lname, age, designation));
-const naam = Array.from("Mera naam mukesh hai");
+// let lname = "rahul";
+// let age = 20;
+// let designation = "clerk";
+// console.log(Array.of(lname, age, designation));
+// const naam = Array.from("Mera naam mukesh hai");
 
-console.log(Array.isArray(naam));
+// console.log(Array.isArray(naam));
+
+const mySym = Symbol("mykey1");
+
+const user = {
+  name: "akshay",
+  [mySym]: "mykey",
+  batch: 2024,
+  branch: "mca",
+  HOD: "belvoed vani",
+  marks: [20, 24, 39, 22],
+};
+
+// console.log(user);
+
+user.moto = function () {
+  console.log("Jai mata di");
+};
+
+console.log(user["marks"]);
+console.log(user["batch"]);
+console.log(user);
