@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      h1 {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+
+        background-color: black;
+      }
+      p {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+        height: 50px;
+        padding-bottom: 50px;
+
+        background-color: black;
+      }
+    </style>
+    <title>Async</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h1 class="h1">Async seekhenge aaj to</h1>
+    <p>bhai nahi ho rha</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const date = function () {
+      let date = new Date();
+      console.log(date.toLocaleTimeString());
+    };
+    let second;
+
+    document.querySelector("#start").addEventListener("click", function () {
+      second = setInterval(date, 1000);
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(second);
+    });
+
+    setInterval(function () {
+      document.querySelector("h1").innerHTML = "Async seekh hi lenge aaj to";
+    }, 2000);
+    setInterval(function () {
+      document.querySelector("h1").innerHTML = "Sub theek hone wala hai";
+    }, 4000);
+  </script>
+</html>

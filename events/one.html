@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      h1 {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+
+        background-color: black;
+      }
+      p {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+        height: 50px;
+        padding-bottom: 50px;
+
+        background-color: black;
+      }
+    </style>
+    <title>Async</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h1 class="h1">Async seekhenge aaj to</h1>
+    <p>bhai nahi ho rha</p>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayMyName = function () {
+      console.log("Akshay");
+    };
+    const blessing = function () {
+      document.querySelector("h1").innerHTML =
+        "Chud gye guru,but ab sub accha ho jaega";
+    };
+    const badlav = setTimeout(blessing, 4000);
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(badlav);
+      console.log("stopped");
+    });
+
+    setInterval(function () {
+      document.querySelector("h1").innerHTML = "Async seekh hi lenge aaj to";
+    }, 6000);
+  </script>
+</html>

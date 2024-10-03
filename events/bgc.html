@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #buttons {
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+      }
+      #start,
+      #stop {
+        height: 40px;
+        width: 140px;
+        font-size: x-large;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-stretch: expanded;
+        border: chocolate;
+        border-radius: 10px;
+        border-width: 10px;
+      }
+      #container {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+      }
+      h1 {
+        background-color: black;
+        background-size: contain;
+        padding: 3px 3px 3px 6px;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        padding-bottom: 50px;
+
+        background-color: black;
+      }
+    </style>
+    <title>Async</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <div id="container">
+      <h1 class="h1">Async seekhenge aaj to</h1>
+      <br />
+    </div>
+    <p>bhai nahi ho rha</p>
+
+    <div id="buttons">
+      <button id="start">Start</button>
+      <button id="stop" style="display: none">Stop</button>
+    </div>
+  </body>
+  <script>
+    // const date = function () {
+    //   let date = new Date();
+    //   console.log(date.toLocaleTimeString());
+    // };
+    // let second;
+
+    // document.querySelector("#start").addEventListener("click", function () {
+    //   second = setInterval(date, 1000);
+    // });
+
+    // document.querySelector("#stop").addEventListener("click", function () {
+    //   clearInterval(second);
+    // });
+
+    setInterval(function () {
+      document.querySelector("h1").innerHTML = "Async seekh hi lenge aaj to";
+    }, 2000);
+    setInterval(function () {
+      document.querySelector("h1").innerHTML = "Sub theek hone wala hai";
+    }, 4000);
+
+    const rColor = function () {
+      const hex = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+    let interval;
+
+    document.querySelector("#start").addEventListener("click", function () {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("stop").style.removeProperty("display");
+      interval = setInterval(periodicChange, 1000);
+      function periodicChange() {
+        document.body.style.backgroundColor = rColor();
+      }
+    });
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(interval);
+      document.getElementById("stop").style.display = "none";
+      document.getElementById("start").style.display = "initial";
+    });
+  </script>
+</html>
