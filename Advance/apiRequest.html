@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <style>
+      #container {
+        background-color: palevioletred;
+        display: grid;
+        width: 50%;
+        border: rgb(19, 141, 190);
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+        justify-content: space-between;
+        font-size: large;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: #212121; color: aliceblue">
+    <div class="card">
+      <div id="container">
+        <table>
+          <tr>
+            <td><div>Name:</div></td>
+            <td><div id="name"></div></td>
+          </tr>
+          <tr>
+            <td><div>Username:</div></td>
+
+            <td><div id="login"></div></td>
+          </tr>
+          <tr>
+            <td><div>Followers:</div></td>
+            <td><div id="follower"></div></td>
+          </tr>
+        </table>
+        <img id="avatar" alt="" />
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

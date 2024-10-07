@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyboard</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <div>
+      <div
+        id="key"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: x-large;
+        "
+      >
+        <p>jadoo</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const butt = document.getElementById("key");
+    window.addEventListener("keydown", (e) => {
+      butt.innerHTML = e.key === " " ? "Space" : e.key;
+    });
+  </script>
+</html>
